@@ -22,5 +22,13 @@ app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/student", require("./routes/studentRoutes"));
 app.use("/api/admin", require("./routes/adminRoutes"));
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
+// IMPORTANT: PORT defined here
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log("Server running"));
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
